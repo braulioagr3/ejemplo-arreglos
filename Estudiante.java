@@ -7,10 +7,17 @@ public class Estudiante
         nombre=nombreIni;
         clave=claveIni;
     }
+    /**
+     * Permite aceder a la clave unica del estudiante
+     * @return regresa la clave del estudiatne
+     */
     public int dimeClave()
     {
         return clave;
     }
+    /**
+     * Muestra los dellates sobre el estudiante
+     */
     public String dimeDetalles()
     {
         return "Clave: "+clave+" Nombre: "+nombre;

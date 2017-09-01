@@ -59,14 +59,20 @@ public class Grupo
         estudiantes[posDisponible]=unEstudiante;//el estudiante fue inscrito
         return true;
     }
-    public void baja(int claveUnica)
+    /**
+     * Inscribe un estudiante nuevo del grupo.
+     * @param claveUnica Es la del estudiante a dar de baja en el grupo.
+     * @return Regresa verdadero si el estudiante fue dado de baja o falso en caso de que
+     *         no se pudiera dar de baja por que no existe.
+     */
+    public boolean baja(int claveUnica)
     {
-        for(int i=0;i<estudiantes.length;i++)
+        int existe = this.buscarEstudiante(claveUnica);
+        if(existe ==-1)
         {
-            if(estudiantes[i].dimeClave() == claveUnica)
-            {
-                estudiantes[i] = null;
-            }
+            return false;//No existe el estudiante inscrito
         }
+        this.estudiantes[existe] = null;
+        return true;
     }
 }
